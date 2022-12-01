@@ -24,18 +24,18 @@
     --very-dark-grayish-blue-alt: hsl(237, 14%, 26%);
     --font-weight-header: 700;
     --font-weight: 400;
-    --background-img: url("/img/bg-desktop-light.jpg");
-    --background-icon: url("/img/ICON-MOON.SVG");
+    --background-img: url("img/bg-desktop-light.jpg");
+    --background-icon: url("img/ICON-MOON.SVG");
 }
 .dark-mode {
     --very-light-gray:hsl(235, 21%, 11%);
     --very-light-gray-blue: hsl(236, 9%, 61%);
-    --background-img: url("/img/bg-desktop-dark.jpg");
+    --background-img: url("img/bg-desktop-dark.jpg");
     --very-dark-blue: hsl(234, 39%, 85%);
     --very-dark-desaturated-blue: hsl(235, 19%, 35%);
     --dark-grayish-blue: hsl(234, 39%, 85%);
     --very-dark-gray-blue:  hsl(236, 33%, 92%);
-    --background-icon: url("/img/ICON-SUN.SVG");
+    --background-icon: url("img/ICON-SUN.SVG");
 }
 body {
     width: 100%;
@@ -250,7 +250,7 @@ ul {
 
 @media screen and (max-width: 375px){
  :root{
-    --background-img: url("/img/BG-MOBILE-LIGHT.JPG");
+    --background-img: url("img/BG-MOBILE-LIGHT.JPG");
  }   
 
  .app-container{
@@ -258,6 +258,6 @@ ul {
  }
 
  .dark-mode {
-    --background-img: url("/img/BG-MOBILE-DARK.JPG");
+    --background-img: url("img/BG-MOBILE-DARK.JPG");
  }
 }
