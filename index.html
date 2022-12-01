@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="/img/FAVICON-32X32.PNG">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <div class="app-container" id="taskapp">
+        <div class="app-top">
+            <h1 class="app-header">TODO</h1>
+            <div id="icon"></div>
+        </div>
+        <div class="add-task">
+            <label class="input-item-label">
+                <input type="checkbox" disabled class="check-disable">
+                <input type="text" placeholder="Add Task" class="task-input" v-model="tasks.name" @keyup.enter="newItem">
+                <!-- <input type="submit" value="" class="submit-task" title="Add Task"> -->
+            </label>
+        </div>
+        <ul class="task-list">
+            <li class="task-list-item" v-for="(task) in tasks" :key="task.name" >
+                <label class="task-list-item-label">
+                    <input type="checkbox" @click="selectOne(task)"> <!--{{task.select}}-->
+                    <span>{{task.name}}</span>
+                </label>
+                <span class="delete-btn" title="Delete" @click="delItem(task)">{{task.del}}</span>
+            </li>
+        </ul>
+
+        <div class="task-options">
+            <span class="task-count" :tasks="tasks">{{totalItems}} items left</span>
+            <ul class="task-views">
+                <li @click="allTasks">All</li>
+                <li @click="activeTasks(tasks) ":active="active">Active</li>
+                <li @click="completedTasks">Completed</li>
+            </ul>
+            <span class="task-count" @click="clearItem(selected)">Clear Completed</span>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="main.js"></script>
+<script>
+    var icon = document.getElementById("icon");
+    icon.onclick = function() {
+        document.body.classList.toggle("dark-mode");
+    }
+</script>
+</html>

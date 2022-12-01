@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Rubik&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bright-blue: hsl(220, 98%, 61%);
+    --check-background: linear-gradient(hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+
+    /*Light Theme*/
+    --very-light-gray: hsl(0, 0%, 98%);
+    --very-light-gray-blue: hsl(236, 33%, 92%);
+    --light-gray-blue: hsl(233, 11%, 84%);
+    --dark-gray-blue: hsl(236, 9%, 61%);
+    --very-dark-gray-blue: hsl(235, 19%, 35%);
+
+    /*Dark Theme*/
+    --very-dark-blue: hsl(235, 21%, 11%);
+    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+    --light-grayish-blue: hsl(234, 39%, 85%);
+    --light-grayish-blue-hover: hsl(236, 33%, 92%);
+    --dark-grayish-blue: hsl(234, 11%, 52%);
+    --very-dark-grayish-blue: hsl(233, 14%, 35%);
+    --very-dark-grayish-blue-alt: hsl(237, 14%, 26%);
+    --font-weight-header: 700;
+    --font-weight: 400;
+    --background-img: url(/img/bg-desktop-light.jpg);
+    --background-icon: url(/img/ICON-MOON.SVG);
+}
+.dark-mode {
+    --very-light-gray:hsl(235, 21%, 11%);
+    --very-light-gray-blue: hsl(236, 9%, 61%);
+    --background-img: url(/img/bg-desktop-dark.jpg);
+    --very-dark-blue: hsl(234, 39%, 85%);
+    --very-dark-desaturated-blue: hsl(235, 19%, 35%);
+    --dark-grayish-blue: hsl(234, 39%, 85%);
+    --very-dark-gray-blue:  hsl(236, 33%, 92%);
+    --background-icon: url(/img/ICON-SUN.SVG);
+}
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--background-img), linear-gradient(var(--very-light-gray-blue),var(--very-light-gray));
+    background-repeat: no-repeat;
+    background-blend-mode: normal, lighten;
+    font-family: 'Rubik', sans-serif;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+input{
+    outline: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.app-container {
+    max-width: 480px;
+    width: 100%;
+    max-height: 100%;
+    box-shadow: var(--very-dark-desaturated-blue) 0px 26px 30px -10px,
+    var(--very-dark-blue) 0px 16px 10px -10px;
+    border-radius: 10px;
+    overflow: auto;
+    background-color: var(--light-grey-blue);
+}
+
+.app-top {
+    width: 100%;
+    display: flex;
+    padding: 25px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#icon {
+    background-image: var(--background-icon);
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    width: 29px;
+    height: 29px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.app-header {
+    font-size: 29px;
+    font-weight: var(--font-weight-header);
+    line-height: 32px;
+    letter-spacing: 0.5em;
+    color: var(--very-light-gray);
+}
+
+
+.add-task  {
+    height: 48px;
+    font-size: 14px;
+    display: flex;
+    box-shadow: var(--very-dark-blue) 0px 26px 30px -10px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+} 
+
+.input-item-label{
+    width: 100%;
+    background-color: var(--very-light-gray-blue);
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+}
+
+.check-disable {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid var(--dark-grayish-blue);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0;
+    transition: 0.2s;
+    margin-right: 8px;
+    flex-shrink: 0;
+
+    appearance: none;
+}
+
+.task-list {
+    border-radius: 5px;
+}
+
+.task-input {
+    width: 100%;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    background-color: var(--very-light-grey);
+    margin-right: 15px;
+    color: var(--very-dark-blue);
+
+}
+
+.task-input::placeholder {
+    color: var(--very-dark-blue);
+}
+
+.task-list-item {
+    background-color: var(--very-light-gray-blue);
+    display: flex;
+    align-items: center;
+    padding: 13px;
+    border-bottom: 1px solid var(--very-dark-gray-blue);
+}
+
+.task-list-item input {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid var(--dark-grayish-blue);
+    background-image: url("/img/ICON-CHECK.SVG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0;
+    transition: 0.2s;
+    flex-shrink: 0;
+    appearance: none;
+    
+}
+
+.task-list-item input:hover {
+    border-color: var(--light-gray-blue);
+    box-shadow: 0 0 3px var(--dark-gray-blue);
+}
+
+.task-list-item input:checked {
+    background-size: 12px;
+    border: 1px solid var(--check-background);
+    background-color: var(--primary-bright-blue);
+}
+
+.task-list-item input:checked + span {
+    color: var(--very-dark-blue);
+    text-decoration: line-through var(--very-dark-blue);
+}
+
+.task-list-item span {
+    padding-left: 8px;
+}
+
+.task-list-item-label {
+    display: flex;
+    align-items: flex-start;
+    color: var(--very-dark-blue);
+    margin-right: 8px;
+    font-size: 14px;
+    line-height: 24px;
+    position: relative;
+    transition: 0.2s;
+    cursor: pointer;
+    padding-left: 12px; 
+}
+
+.delete-btn {
+    margin-left: auto;
+    margin-right: 5px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url(/img/ICON-CROSS.SVG);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: center;
+    cursor: pointer;
+}
+
+.task-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 10px;
+    color: var(--very-dark-grayish-blue);
+    cursor: pointer;
+    background-color: var(--very-light-gray-blue);
+    
+}
+
+.task-views {
+    display: flex;
+    font-weight: var(--font-weight-header);
+}
+
+.task-views li {
+    padding-left: 5px;
+    transition: 0.2s;
+}
+
+.task-views li:hover {
+    color: var(--primary-bright-blue);
+}
+
+@media screen and (max-width: 375px){
+ :root{
+    --background-img: url(/img/BG-MOBILE-LIGHT.JPG);
+ }   
+
+ .app-container{
+    width: 280px;
+ }
+
+ .dark-mode {
+    --background-img: url(/img/BG-MOBILE-DARK.JPG);
+ }
+}
