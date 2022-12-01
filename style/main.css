@@ -166,7 +166,7 @@ ul {
     height: 16px;
     border-radius: 50%;
     border: 1px solid var(--dark-grayish-blue);
-    background-image: url("/img/ICON-CHECK.SVG");
+    background-image: url("img/ICON-CHECK.SVG");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 0;
@@ -215,7 +215,7 @@ ul {
     display: block;
     width: 16px;
     height: 16px;
-    background-image: url(/img/ICON-CROSS.SVG);
+    background-image: url("/img/ICON-CROSS.SVG");
     background-repeat: no-repeat;
     background-size: 16px;
     background-position: center;
